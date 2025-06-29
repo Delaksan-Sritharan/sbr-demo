@@ -13,16 +13,17 @@ import java.util.List;
 @Service
 public class StudentService implements IStudentService{
     private final StudentRepository studentRepository;
+
     @Autowired // Optional in Spring 4.3+
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
 
-
     @Override
     public List<Student> getStudents() {
         return studentRepository.findAll();
     }
+
     @Override
     public Student addStudent(Student student) {
         if (studentAlreadyExists(student.getEmail())){
