@@ -1,6 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './App.css';
 import StudentsView from './component/student/StudentsView';
 import Home from './Home';
+
+
 
 function App() {
   return (
