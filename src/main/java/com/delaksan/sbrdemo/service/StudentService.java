@@ -1,6 +1,7 @@
 package com.delaksan.sbrdemo.service;
 
 import com.delaksan.sbrdemo.exception.StudentAlreadtExistsExcception;
+import com.delaksan.sbrdemo.exception.StudentNotFoundException;
 import com.delaksan.sbrdemo.model.Student;
 import com.delaksan.sbrdemo.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +28,13 @@ public class StudentService implements IStudentService{
 
     @Override
     public Student updateStudent(Student student, Long id) {
-        return null;
+        return studentRepository.findById(id).map(st -> {
+            st.setFirstName(student.getFirstName());
+            st.setLastName(student.getLastName());
+            st.setEmail(student.getEmail());
+            st.setDepartment(student.getDepartment());
+            return studentRepository.save(st);
+        }).orElseThrow(() -> new StudentNotFoundException("Sorry, this student could not be found!"));
     }
 
     @Override
