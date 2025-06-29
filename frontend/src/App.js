@@ -1,4 +1,5 @@
 import './App.css';
+import StudentsView from './component/student/StudentsView';
 import Home from './Home';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <h2>Welcome to our frontend</h2>
       <Home />
+      <StudentsView />
     </div>
   );
 }

@@ -1,8 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
 const StudentsView = () => {
 
     const [students, setStudents] = useState([]);
+    useEffect(() => {
+        loadStudents();
+    }, [])
+    const loadStudents = async () => {
+        const result = await axios.get("http://localhost:8080/students",
+            {
+                validateStatus: () => {
+                    return true;
+                },
+            }
+        );
+        if (result.status === 302) {
+            setStudents(result.data);
+        }
+    };
     return (
         <section>
             <table>
