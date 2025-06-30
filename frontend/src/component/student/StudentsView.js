@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { FaTrash, FaTrashAlt } from 'react-icons/fa';
+import { FaEdit, FaEye, FaTrashAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const StudentsView = () => {
 
@@ -44,17 +45,19 @@ const StudentsView = () => {
                             <td>{student.email}</td>
                             <td>{student.department}</td>
                             <td className='mx-2'>
-                                <button
+
+                                <Link to={`/student-profile/${student.id}`}
                                     className='btn btn-info'>
-                                    View
-                                </button>
+                                    <FaEye />
+                                </Link>
+
                             </td>
                             <td className='mx-2'>
 
-                                <button
+                                <Link to={`/edit-student/${student.id}`}
                                     className='btn btn-warning'>
-                                    Update
-                                </button>
+                                    <FaEdit />
+                                </Link>
 
                             </td>
                             <td className='mx-2'>
