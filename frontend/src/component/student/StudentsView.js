@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { FaTrash, FaTrashAlt } from 'react-icons/fa';
 
 const StudentsView = () => {
 
@@ -49,16 +50,20 @@ const StudentsView = () => {
                                 </button>
                             </td>
                             <td className='mx-2'>
+
                                 <button
                                     className='btn btn-warning'>
                                     Update
                                 </button>
+
                             </td>
                             <td className='mx-2'>
+
                                 <button
                                     className='btn btn-danger'>
-                                    Delete
+                                    <FaTrashAlt />
                                 </button>
+
                             </td>
                         </tr>
                     ))}
