@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const AddStudents = () => {
-    const [student, setStudents] = useState({
+    const [student, setStudent] = useState({
         firstName: '',
         LastName: '',
         email: '',
@@ -9,6 +9,10 @@ const AddStudents = () => {
     })
 
     const { firstName, LastName, email, depatment } = student;
+
+    const handleInputChange = (e) => {
+        setStudent({ ...student, [e.target.name]: e.target.value });
+    }
     return (
         <div className='col-sm-8 py-2 px-5'>
             <form>
