@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const AddStudents = () => {
+    const [student, setStudents] = useState({
+        firstName: '',
+        LastName: '',
+        email: '',
+        depatment: ''
+    })
+
+    const { firstName, LastName, email, depatment } = student;
     return (
         <div className='col-sm-8 py-2 px-5'>
             <form>
@@ -12,15 +20,52 @@ const AddStudents = () => {
                     <input className='form-control col-sm-6'
                         type='text'
                         name='firstName'
-                        id='firstName' >
-                    </input>
-
+                        id='firstName'
+                        required
+                        value={firstName} />
                 </div>
-            </form>
+                <div className='input-group mb-5'>
+                    <label
+                        className='input-group-text'
+                        htmlFor='LastName'
+                    >Last Name</label>
+                    <input className='form-control col-sm-6'
+                        type='text'
+                        name='LastName'
+                        id='LastName'
+                        required
+                        value={LastName} />
+                </div>
+                <div className='input-group mb-5'>
+                    <label
+                        className='input-group-text'
+                        htmlFor='email'
+                    >Email</label>
+                    <input className='form-control col-sm-6'
+                        type='text'
+                        name='email'
+                        id='email'
+                        required
+                        value={email} />
+                </div>
+                <div className='input-group mb-5'>
+                    <label
+                        className='input-group-text'
+                        htmlFor='depatment'
+                    >Depatment</label>
+                    <input className='form-control col-sm-6'
+                        type='text'
+                        name='depatment'
+                        id='depatment'
+                        required
+                        value={depatment} />
+                </div>
 
-        </div>
+
+            </form >
+
+        </div >
     )
 }
 
-//ded
 export default AddStudents

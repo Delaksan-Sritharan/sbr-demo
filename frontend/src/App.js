@@ -6,6 +6,7 @@ import Home from './Home';
 import { Nav } from 'react-bootstrap';
 import NavBar from './component/common/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AddStudents from './component/student/AddStudents';
 
 
 
@@ -18,6 +19,9 @@ function App() {
           <Route exact path="/" element={<Home />} >
           </Route>
           <Route exact path="/view-students" element={<StudentsView />} >
+
+          </Route>
+          <Route exact path="/add-students" element={<AddStudents />} >
 
           </Route>
         </Routes>
