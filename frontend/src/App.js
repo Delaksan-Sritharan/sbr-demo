@@ -9,8 +9,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddStudents from './component/student/AddStudents';
 import EditStudent from './component/student/EditStudent';
 
-
-
 function App() {
   return (
     <main className="container mt-5">
