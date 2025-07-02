@@ -1,22 +1,28 @@
+import axios from 'axios';
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 const AddStudents = () => {
     const [student, setStudent] = useState({
         firstName: '',
-        LastName: '',
+        lastName: '',
         email: '',
-        depatment: ''
+        department: ''
     })
 
-    const { firstName, LastName, email, depatment } = student;
+    const { firstName, lastName, email, department } = student;
 
     const handleInputChange = (e) => {
         setStudent({ ...student, [e.target.name]: e.target.value });
     }
+
+    const saveStudent = async (e) => {
+        e.preventDefault();
+        await axios.post("http://localhost:8080/students", student)
+    }
     return (
         <div className='col-sm-8 py-2 px-5 offset-2 shadow'>
-            <form>
+            <form onSubmit={(e) => saveStudent(e)}>
                 <div className='input-group mb-5'>
                     <label
                         className='input-group-text'
@@ -33,14 +39,14 @@ const AddStudents = () => {
                 <div className='input-group mb-5'>
                     <label
                         className='input-group-text'
-                        htmlFor='LastName'
+                        htmlFor='lastName'
                     >Last Name</label>
                     <input className='form-control col-sm-6'
                         type='text'
-                        name='LastName'
-                        id='LastName'
+                        name='lastName'
+                        id='lastName'
                         required
-                        value={LastName}
+                        value={lastName}
                         onChange={(e) => handleInputChange(e)} />
                 </div>
                 <div className='input-group mb-5'>
@@ -59,14 +65,14 @@ const AddStudents = () => {
                 <div className='input-group mb-5'>
                     <label
                         className='input-group-text'
-                        htmlFor='depatment'
-                    >Depatment</label>
+                        htmlFor='department'
+                    >Department</label>
                     <input className='form-control col-sm-6'
                         type='text'
-                        name='depatment'
-                        id='depatment'
+                        name='department'
+                        id='department'
                         required
-                        value={depatment}
+                        value={department}
                         onChange={(e) => handleInputChange(e)} />
                 </div>
                 <div className='row mb-5'>
