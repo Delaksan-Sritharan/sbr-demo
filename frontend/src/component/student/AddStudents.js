@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const AddStudents = () => {
     const [student, setStudent] = useState({
@@ -75,9 +76,9 @@ const AddStudents = () => {
                         </button>
                     </div>
                     <div className='col-sm-2'>
-                        <button type='submit' className='btn btn-outline-warning btn-lg'>
+                        <Link to={"/view-students"} type='submit' className='btn btn-outline-warning btn-lg'>
                             Cancel
-                        </button>
+                        </Link>
                     </div>
                 </div>
 
