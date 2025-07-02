@@ -35,9 +35,10 @@ This is a full-stack web application that allows users to **add**, **edit**, and
    
 3. **Run Frontend**
    npm install
+   
    npm start
 
-4. **Open your browser at http://localhost:3000.**
+5. **Open your browser at http://localhost:3000.**
 
 
 ---
