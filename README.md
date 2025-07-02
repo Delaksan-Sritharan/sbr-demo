@@ -33,11 +33,11 @@ This is a full-stack web application that allows users to **add**, **edit**, and
    ```bash
    ./mvnw spring-boot:run
    
-3. **Run Frontend
+3. **Run Frontend**
    npm install
    npm start
 
-4. **Open your browser at http://localhost:3000.
+4. **Open your browser at http://localhost:3000.**
 
 
 ---
