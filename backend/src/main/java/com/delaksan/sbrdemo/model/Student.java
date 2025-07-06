@@ -17,16 +17,21 @@ public class Student {
     @NaturalId(mutable = true)
     private String email;
     private String department;
+    private String batch;
+    private String paymentStatus;
 
     public Student() {
     }
 
-    public Student(Long id, String firstName, String lastName, String email, String department) {
+
+    public Student(Long id, String firstName, String lastName, String email, String department, String batch, String paymentStatus) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.department = department;
+        this.batch = batch;
+        this.paymentStatus = paymentStatus;
     }
 
     public Long getId() {
@@ -67,5 +72,21 @@ public class Student {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public String getBatch() {
+        return batch;
+    }
+
+    public void setBatch(String batch) {
+        this.batch = batch;
+    }
+
+    public String getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
     }
 }
