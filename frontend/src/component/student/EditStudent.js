@@ -9,10 +9,12 @@ const EditStudent = () => {
         firstName: '',
         lastName: '',
         email: '',
-        department: ''
+        department: '',
+        batch: '',
+        paymentStatus: ''
     })
 
-    const { firstName, lastName, email, department } = student;
+    const { firstName, lastName, email, department, batch, paymentStatus } = student;
 
     useEffect(() => {
         loadStudent();
@@ -86,6 +88,36 @@ const EditStudent = () => {
                         required
                         value={department}
                         onChange={(e) => handleInputChange(e)} />
+                </div>
+                <div className='input-group mb-5'>
+                    <label
+                        className='input-group-text'
+                        htmlFor='batch'
+                    >Batch</label>
+                    <input className='form-control col-sm-6'
+                        type='text'
+                        name='batch'
+                        id='batch'
+                        required
+                        value={batch}
+                        onChange={(e) => handleInputChange(e)} />
+                </div>
+                <div className='input-group mb-5'>
+                    <label
+                        className='input-group-text'
+                        htmlFor='paymentStatus'
+                    >Payment Status</label>
+                    <select className='form-control col-sm-6'
+                        type='text'
+                        name='paymentStatus'
+                        id='paymentStatus'
+                        required
+                        value={paymentStatus}
+                        onChange={(e) => handleInputChange(e)} >
+                        <option value=''>Select Status</option>
+                        <option value='Paid'>Paid</option>
+                        <option value='Unpaid'>Unpaid</option>
+                    </select>
                 </div>
                 <div className='row mb-5'>
                     <div className='col-sm-2'>

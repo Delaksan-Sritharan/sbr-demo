@@ -124,6 +124,20 @@ const StudentPofile = () => {
                                         </p>
                                     </div>
                                 </div>
+                                <hr />
+                                <div className="row">
+                                    <div className="col-sm-3">
+                                        <h5 className="mb-0">
+                                            Batch
+                                        </h5>
+                                    </div>
+
+                                    <div className="col-sm-9">
+                                        <p className="text-muted mb-0">
+                                            {student.batch}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

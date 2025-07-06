@@ -40,6 +40,8 @@ const StudentsView = () => {
                         <th>Last Name</th>
                         <th>Email</th>
                         <th>Department</th>
+                        <th>Batch</th>
+                        <th>Payment Status</th>
                         <th colSpan="3">Action</th>
                     </tr>
                 </thead>
@@ -60,6 +62,8 @@ const StudentsView = () => {
                                 <td>{student.lastName}</td>
                                 <td>{student.email}</td>
                                 <td>{student.department}</td>
+                                <td>{student.batch}</td>
+                                <td>{student.paymentStatus}</td>
                                 <td className='mx-2'>
 
                                     <Link to={`/student-profile/${student.id}`}
